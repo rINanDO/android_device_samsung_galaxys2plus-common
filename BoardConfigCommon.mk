@@ -120,12 +120,15 @@ BOARD_SEPOLICY_UNION += \
     init.te \
     kernel.te \
     macloader.te \
+    netd.te \
     rild.te \
     shell.te \
     system_app.te \
     system_server.te \
     tvserver.te \
-    vclmk.te
+    untrusted_app.te \
+    vclmk.te \
+    vold.te
 
 # Disable adb RSA security and enable adb root when debug
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
