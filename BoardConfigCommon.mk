@@ -122,6 +122,7 @@ BOARD_SEPOLICY_UNION += \
     kernel.te \
     macloader.te \
     netd.te \
+    radio.te \
     rild.te \
     shell.te \
     system_app.te \
