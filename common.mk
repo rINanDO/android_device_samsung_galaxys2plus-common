@@ -29,6 +29,18 @@ PRODUCT_PACKAGES += \
     setup_fs \
     make_ext4fs
 
+# Extra tools
+PRODUCT_PACKAGES += \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    fibmap.f2fs \
+    mkfs.f2fs \
+    fsck.f2fs \
+    tune2fs \
+    e2fsck \
+    mke2fs
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
