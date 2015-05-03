@@ -7,6 +7,9 @@ COMMON_PATH := device/samsung/galaxys2plus-common
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
+# Overlay and packages usually set by vendor/cm
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay2
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -57,7 +60,6 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
-    Torch \
     charger \
     charger_res_images \
     SamsungServiceMode \
