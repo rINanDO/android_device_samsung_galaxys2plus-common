@@ -216,6 +216,9 @@
          turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOff">true</bool>
 
+    <!-- Doze: force using accelerometer as pick up sensor -->
+    <bool name="config_dozeUseAccelerometer">true</bool>
+
     <!-- Is the device LTE capable -->
     <bool name="config_lte_capable">false</bool>
 
