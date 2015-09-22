@@ -120,11 +120,13 @@ BOARD_SEPOLICY_UNION += \
     device.te \
     geomagneticd.te \
     gpsd.te \
+    hostapd.te \
     init.te \
     kernel.te \
     macloader.te \
     netd.te \
     radio.te \
+    recovery.te \
     rild.te \
     shell.te \
     system_app.te \
@@ -132,4 +134,5 @@ BOARD_SEPOLICY_UNION += \
     tvserver.te \
     untrusted_app.te \
     vclmk.te \
-    vold.te
+    vold.te \
+    wpa.te
