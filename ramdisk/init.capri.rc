@@ -26,24 +26,9 @@ on init
     chmod 0660 /proc/vc-hnfo
     write /proc/vc-hnfo "resolution 0"
 
-    mkdir /tmp
-    mount tmpfs tmpfs /tmp
-    chmod 1775 /tmp
-
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0550 system sdcard_r
-    mkdir /storage/emulated 0555 root root
-
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
     # Secondary storage
     mkdir /storage/sdcard1 0700 root root
@@ -314,8 +299,7 @@ on boot
     chown system system /sys/class/timed_output/vibrator/pwm_value
 
 on fs
-    mount_all /fstab.capri
-    setprop ro.crypto.fuse_sdcard true
+    mount_all ./fstab.capri
 
     # For NV Read/Write
     chown radio system /dev/block/mmcblk0p1
@@ -363,10 +347,6 @@ on post-fs
     chmod 0771 /efs
 
 on post-fs-data
-    # We will remap this as /storage/sdcard with the sdcard fuse tool
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
-
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
@@ -454,19 +434,6 @@ service capri-ril-daemon /system/bin/rild
     socket rild-debug stream 660 radio system
     user root
     group radio cache inet misc audio system sdcard_rw log sdcard_r
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-    oneshot
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
 
 # begin of Wi-Fi
 service wpa_supplicant /system/bin/wpa_supplicant \
