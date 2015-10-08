@@ -108,34 +108,3 @@ BOARD_USES_SKTEXTBOX := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/galaxys2plus-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    property_contexts \
-    service_contexts \
-    bkmgrd.te \
-    device.te \
-    geomagneticd.te \
-    gpsd.te \
-    hostapd.te \
-    init.te \
-    install_recovery.te \
-    kernel.te \
-    macloader.te \
-    netd.te \
-    radio.te \
-    recovery.te \
-    rild.te \
-    shell.te \
-    system_app.te \
-    system_server.te \
-    tvserver.te \
-    uncrypt.te \
-    untrusted_app.te \
-    vclmk.te \
-    vold.te \
-    wpa.te
