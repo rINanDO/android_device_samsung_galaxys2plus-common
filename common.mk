@@ -11,8 +11,8 @@ DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay2
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 480
-TARGET_SCREEN_HEIGHT := 800
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
