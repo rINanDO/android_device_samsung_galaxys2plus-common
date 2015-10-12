@@ -370,6 +370,8 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
+    restorecon_recursive /sys/devices/system/cpu/cpufreq/ondemand
+
     # for Wi-Fi
     mkdir /efs/wifi 0775 radio system
     mkdir /efs/bluetooth 0775 radio system

@@ -39,6 +39,10 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
+# GPS/RIL
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Open-source HALs
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
