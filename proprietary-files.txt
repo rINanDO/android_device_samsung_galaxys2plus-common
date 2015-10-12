@@ -98,9 +98,7 @@ lib/libvchwtest_driver.so
 lib/libvcos.so
 lib/libVCOS.so
 lib/libvcsm.so
-lib/libwvdrm_L3.so
 lib/libWFC.so
-lib/libWVStreamControlAPI_L3.so
 
 # Modules
 lib/modules/VoiceSolution.ko
@@ -116,4 +114,3 @@ vendor/lib/egl/libGLES_vc4.so
 vendor/lib/hw/camera.capri.so
 vendor/lib/hw/gralloc.capri.so
 vendor/lib/hw/hwcomposer.capri.so
-vendor/lib/hw/power.capri.so
