@@ -39,6 +39,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Recovery
+TARGET_RECOVERY_FSTAB := device/samsung/galaxys2plus-common/ramdisk/fstab.capri
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 BOARD_HAS_NO_SELECT_BUTTON := true
