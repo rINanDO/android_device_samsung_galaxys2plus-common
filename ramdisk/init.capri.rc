@@ -30,14 +30,6 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
-    # Secondary storage
-    mkdir /storage/sdcard1 0700 root root
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-
-    # USB storage
-    mkdir /storage/usbdisk 0700 root root
-    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
-
     symlink /dev/block/mmcblk0p11 /dev/block/param
 
     # We will create our own ril-daemon service with different perm
