@@ -2,13 +2,9 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
-# Set composition for USB
+# Set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
-
-# Set read only default composition for USB
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.usb.default.config=mtp
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -42,8 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.brcm.cp_crash=none \
     persist.brcm.gralloc.force_hdcp=1 \
     ro.tvout.enable=true \
-    wifi.interface=wlan0 \
-    persist.sys.isUsbOtgEnabled=true
+    wifi.interface=wlan0
 
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES += \
