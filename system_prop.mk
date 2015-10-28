@@ -43,3 +43,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=56m
+
+# Properties usually set by vendor/cm
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-google \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=false
+
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+# Disable ADB authentication
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+endif

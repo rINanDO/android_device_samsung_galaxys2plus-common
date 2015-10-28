@@ -79,8 +79,12 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+    charger_res_images \
+    Launcher3 \
     SamsungServiceMode \
-    charger_res_images
+    SoundRecorder \
+    Stk
 
 # Permissions
 PRODUCT_COPY_FILES += \
