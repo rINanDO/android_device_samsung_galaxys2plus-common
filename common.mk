@@ -7,9 +7,6 @@ COMMON_PATH := device/samsung/galaxys2plus-common
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
-# Overlay and packages usually set by vendor/cm
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay2
-
 # Boot animation
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/bootanimation/bootanimation.zip:system/media/bootanimation.zip
