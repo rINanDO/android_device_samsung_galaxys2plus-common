@@ -107,3 +107,6 @@ BOARD_USES_SKTEXTBOX := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/galaxys2plus-common/sepolicy
