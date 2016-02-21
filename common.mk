@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/keylayouts/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
     $(COMMON_PATH)/keylayouts/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
+#SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Packages
 PRODUCT_PACKAGES += \
     charger_res_images \
