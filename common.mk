@@ -7,6 +7,14 @@ COMMON_PATH := device/samsung/galaxys2plus-common
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
+# This device is hdpi.
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_LOCALES += hdpi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=240
+
 # Boot animation
 TARGET_SCREEN_WIDTH := 480
 TARGET_SCREEN_HEIGHT := 800
