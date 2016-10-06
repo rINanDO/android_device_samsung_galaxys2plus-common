@@ -91,10 +91,6 @@ WIFI_DRIVER_MODULE_AP_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_ap
 WIFI_DRIVER_MODULE_ARG              := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                           := 802_11_ABG
 
-# healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
-WITH_CM_CHARGER := false
-
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
